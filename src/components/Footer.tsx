@@ -23,7 +23,7 @@ const Footer = () => {
             </div>
         </div>
 
-        <div className="flex flex-shrink-0 gap-8 sm:gap-12 md:gap-16">
+        <div className="flex shrink-0 gap-8 sm:gap-12 md:gap-16">
 
             <div> 
                 <h3 className="text-xs font-semibold uppercase sm:text-sm"> Product</h3>

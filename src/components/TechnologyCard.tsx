@@ -29,7 +29,7 @@ const TechnologyCard = ({ technology }: TechnologyCardProps) => {
         </span>
         
        <div className="flex gap-1 mt-4 ">
-        <span className="text-yellow-500">★</span>
+        <span className="text-yellow-500"><i className="fa-solid fa-star"></i></span>
         <span className="font-semibold"> {technology.rating} </span>
       </div>     
       </div>

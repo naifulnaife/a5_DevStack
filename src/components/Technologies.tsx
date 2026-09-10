@@ -1,0 +1,32 @@
+import { use } from "react";
+import type { ITechnology } from "../types/Technologies";
+import TechnologyCard from "./TechnologyCard";
+
+
+interface TechnologiesProps {
+  technologiesPromise: Promise<ITechnology[]>;
+}
+
+const Technologies = ({technologiesPromise,}: TechnologiesProps) => {
+const technologies = use(technologiesPromise);
+
+  return (
+    <section className="container mx-auto px-4 py-10 mb-10">
+      <div className="mb-10">
+        <div className="flex"><h2 className="text-4xl font-extrabold ">Explore</h2><h2 className="text-4xl font-extrabold bg-linear-to-r from-[#D91B7E] to-[#7B2FF7] bg-clip-text text-transparent">Technologies</h2></div>
+        <p className="text-gray-500 mt-2">Pick one technology per category to build your ideal stack.</p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10">
+      {technologies.map((technology) => (
+        <
+         TechnologyCard key={technology.id}technology={technology}
+        />
+        ))}
+
+      </div>
+    </section>
+  );
+};
+
+export default Technologies;

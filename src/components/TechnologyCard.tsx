@@ -3,9 +3,12 @@ import type { ITechnology } from "../types/Technologies";
 
 interface TechnologyCardProps {
   technology: ITechnology;
+  handleAddToStack: (technology: ITechnology) => void;
+  isAdded: boolean;
 }
+ 
 
-const TechnologyCard = ({ technology }: TechnologyCardProps) => {
+const TechnologyCard = ({ technology,handleAddToStack,isAdded}: TechnologyCardProps) => {
   return (
     <div className="border border-gray-200 rounded-2xl p-5 shadow-sm bg-white">
 
@@ -35,8 +38,23 @@ const TechnologyCard = ({ technology }: TechnologyCardProps) => {
       </div>
 
       
-      <button className="w-full mt-5 border border-gray-300 rounded-lg py-2 font-medium bg-gray-900 text-white hover:bg-linear-to-r from-[#D91B7E] to-[#7B2FF7] transition"> Add to Stack</button>
-    </div>
+      <button
+        // NEW: call function when button is clicked
+        onClick={() => handleAddToStack(technology)}
+
+        // NEW: disable button if already added
+        disabled={isAdded}
+
+        className={`w-full mt-5 rounded-lg py-2 font-medium transition ${
+          isAdded
+            ? "bg-gray-200 text-gray-500 cursor-not-allowed"
+            : "border border-gray-300 hover:bg-gray-100"
+        }`}
+      >
+        {/* NEW: change button text */}
+        {isAdded ? "✓ Added to Stack" : "Add to Stack"}
+      </button>
+      </div>
   );
 };
 

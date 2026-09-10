@@ -1,4 +1,4 @@
-import { use } from "react";
+import { use, useState } from "react";
 import type { ITechnology } from "../types/Technologies";
 import TechnologyCard from "./TechnologyCard";
 import YourStack from "./YourStack";
@@ -11,6 +11,11 @@ interface TechnologiesProps {
 const Technologies = ({technologiesPromise,}: TechnologiesProps) => {
 const technologies = use(technologiesPromise);
 
+const [stack, setStack] = useState<ITechnology[]>([]);
+ const handleAddToStack = (technology: ITechnology) => {
+    setStack([...stack, technology]);
+  };
+
   return (
     <section className="container mx-auto px-4 py-10 mb-10">
       <div className="mb-10">
@@ -21,15 +26,19 @@ const technologies = use(technologiesPromise);
 <div className="flex-1">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10">
       {technologies.map((technology) => (
-        <
-         TechnologyCard key={technology.id}technology={technology}
+        < TechnologyCard key={technology.id}technology={technology}
+
+        handleAddToStack={handleAddToStack}
+        isAdded={stack.some(
+                  (item) => item.id === technology.id
+                )}
         />
         ))}
 
       </div>
        </div>
        <div className="w-full lg:w-80">
-          <YourStack />
+          <YourStack stack={stack} />
         </div>
 
       </div>

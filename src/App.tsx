@@ -26,7 +26,11 @@ function App() {
      <Nav></Nav>
      <Banner></Banner>
 
-      <Suspense fallback={<h2>Loading........</h2>}>
+      <Suspense fallback={
+        <div className="flex justify-center items-center py-20">
+          <span className="loading loading-spinner loading-xl"></span>
+        </div>
+        }>
          <Technologies technologiesPromise={technologiesPromise} />
       </Suspense>
       <ToastContainer position="top-right" autoClose={2000} />

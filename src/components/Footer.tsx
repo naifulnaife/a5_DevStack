@@ -5,7 +5,7 @@ const Footer = () => {
    <div className="shadow-2xl border-t border-gray-200">
      <div className="container mx-auto px-4 py-8 ">
 
-    <div className="flex justify-between gap-8">
+    <div className="flex flex-col lg:flex-row sm:flex-row justify-between gap-8">
         <div className="max-w-sm">
             <img src={Logo} alt="Dev Stack" className="w-32" />
 
@@ -23,7 +23,7 @@ const Footer = () => {
             </div>
         </div>
 
-        <div className="flex shrink-0 gap-8 sm:gap-12 md:gap-16">
+        <div className="flex  shrink-0 gap-8 sm:gap-12 md:gap-16">
 
             <div> 
                 <h3 className="text-xs font-semibold uppercase sm:text-sm"> Product</h3>

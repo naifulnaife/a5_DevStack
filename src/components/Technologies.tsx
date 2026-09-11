@@ -29,30 +29,29 @@ const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
     toast.success(`${technology.name} added to your stack!`);
   };
 
-  // NEW: remove one technology
+ 
   const handleRemoveFromStack = (id: string) => {
     setStack(stack.filter((item) => item.id !== id));
 
     toast.error("Technology removed from your stack!");
   };
 
-  // NEW: remove all technologies
   const handleRemoveAll = () => {
     setStack([]);
 
     toast.error("All technologies removed!");
-  }; // CHANGED: this closing bracket was missing
+  }; 
 
   return (
     <section className="container mx-auto px-4 py-10 mb-10">
 
       <div className="mb-10">
         <div className="flex">
-          <h2 className="text-4xl font-extrabold">
+          <h2 className=" text-2xl lg:text-4xl font-extrabold">
             Explore
           </h2>
 
-          <h2 className="text-4xl font-extrabold bg-linear-to-r from-[#D91B7E] to-[#7B2FF7] bg-clip-text text-transparent">
+          <h2 className="text-2xl lg:text-4xl font-extrabold bg-linear-to-r from-[#D91B7E] to-[#7B2FF7] bg-clip-text text-transparent">
             Technologies
           </h2>
         </div>
@@ -86,10 +85,11 @@ const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
           <YourStack
             stack={stack}
 
-            // NEW: pass remove function to YourStack
-            handleRemoveFromStack={handleRemoveFromStack}
+          
+            handleRemoveFromStack
+            ={handleRemoveFromStack}
 
-            // NEW: pass remove all function to YourStack
+            
             handleRemoveAll={handleRemoveAll}
           />
 

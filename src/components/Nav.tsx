@@ -31,7 +31,7 @@ const Nav = () => {
         <li><a>Contact</a></li>
     </ul>
   </div>
-  <div className="navbar-end gap-4">
+  <div className="lg:navbar-end sm:navbar-end gap-4 ">
     <a className="btn bg-white border-0">Sign In</a>
     <a className="btn rounded-4xl bg-[#D91B7E] text-white">Sign Up</a>
   </div>

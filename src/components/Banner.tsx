@@ -4,7 +4,7 @@ const Banner = () => {
     return (
         <div className='flex flex-col lg:flex-row container mx-auto my-20  px-4 items-center  gap-10 lg:gap-40 justify-center lg:justify-start'>
           <div className="w-full lg:w-1/2 ">
-              <div className="py-4 lg:pb-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold">
+              <div className="py-4 lg:pb-6 text-3xl sm:text-3xl lg:text-6xl font-extrabold">
                 <h1>Build Your Ideal</h1>
                 <h1 className="bg-linear-to-r from-[#D91B7E] to-[#7B2FF7] bg-clip-text text-transparent">Development Stack</h1>
             </div>

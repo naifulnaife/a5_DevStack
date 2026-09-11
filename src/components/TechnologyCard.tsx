@@ -1,11 +1,9 @@
 import type { ITechnology } from "../types/Technologies";
 
-
 interface TechnologyCardProps {
   technology: ITechnology;
   handleAddToStack: (technology: ITechnology) => void;
-  isAdded: boolean;
-}
+  isAdded: boolean;}
  
 
 const TechnologyCard = ({ technology,handleAddToStack,isAdded}: TechnologyCardProps) => {
@@ -22,14 +20,9 @@ const TechnologyCard = ({ technology,handleAddToStack,isAdded}: TechnologyCardPr
 
       <div className="flex gap-2 mt-4 justify-between">
 
-        
-        <span className="bg-gray-100 text-gray-700 text-xs font-medium px-5 py-3 rounded-xl">
-          {technology.category}
-        </span>
+        <span className="bg-gray-100 text-gray-700 text-xs font-medium px-5 py-3 rounded-xl">{technology.category}</span>
 
-        <span className=" text-gray-700 text-xs font-medium px-5 py-3 rounded-xl">
-          {technology.difficulty}
-        </span>
+        <span className=" text-gray-700 text-xs font-medium px-5 py-3 rounded-xl">{technology.difficulty} </span>
         
        <div className="flex gap-1 mt-4 ">
         <span className="text-yellow-500"><i className="fa-solid fa-star"></i></span>
@@ -37,21 +30,13 @@ const TechnologyCard = ({ technology,handleAddToStack,isAdded}: TechnologyCardPr
       </div>     
       </div>
 
-      
-      <button
-        // NEW: call function when button is clicked
-        onClick={() => handleAddToStack(technology)}
 
-        // NEW: disable button if already added
-        disabled={isAdded}
-
+      <button onClick={() => handleAddToStack(technology)}disabled={isAdded}
         className={`w-full mt-5 rounded-lg py-2 font-medium transition ${
           isAdded
             ? "bg-gray-200 text-gray-500 cursor-not-allowed"
-            : "border border-gray-300 hover:bg-gray-100"
-        }`}
-      >
-        {/* NEW: change button text */}
+            : "border border-gray-300 hover:bg-gray-100"}`} >
+    
         {isAdded ? "✓ Added to Stack" : "Add to Stack"}
       </button>
       </div>
